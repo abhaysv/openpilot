@@ -21,8 +21,8 @@ class CarInterface(CarInterfaceBase):
 
     # Angle-based steering
     ret.steerControlType = CarParams.SteerControlType.angle
-    ret.steerActuatorDelay = 0.4
-    ret.steerLimitTimer = 1.0
+    ret.steerActuatorDelay = 0.1
+    ret.steerLimitTimer = 0.4
     tire_stiffness_factor = 1.0
 
     if candidate == CAR.ESCAPE_MK4:
