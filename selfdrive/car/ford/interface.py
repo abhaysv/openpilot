@@ -19,11 +19,14 @@ class CarInterface(CarInterfaceBase):
     # These cars are dashcam only until steering safety is implemented
     ret.dashcamOnly = True
 
-    # Angle-based steering
-    ret.steerControlType = CarParams.SteerControlType.angle
+    # curvature steering
+    ret.steerControlType = CarParams.SteerControlType.curvature
     ret.steerActuatorDelay = 0.1
     ret.steerLimitTimer = 0.4
     tire_stiffness_factor = 1.0
+    ret.lateralTuning.pid.kpBP, ret.lateralTuning.pid.kiBP = [[0.], [0.]]
+    ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.008], [0.]]
+    ret.lateralTuning.pid.kf = 1.
 
     if candidate == CAR.BRONCO_SPORT_MK1:
       ret.wheelbase = 2.67
