@@ -17,7 +17,7 @@ class CarInterface(CarInterfaceBase):
     ret.safetyConfigs = [get_safety_config(CarParams.SafetyModel.ford)]
 
     # These cars are dashcam only until steering safety is implemented
-    ret.dashcamOnly = True
+    ret.dashcamOnly = False
 
     # curvature steering
     ret.steerControlType = CarParams.SteerControlType.curvature
